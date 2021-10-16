@@ -1,5 +1,5 @@
 <template>
-  <div v-if="photos && !userName && likes && (new Date().getDay() == 6 || new Date().getDay() == 0)">
+  <div v-if="photos && !userName && likes && !(new Date().getDay() == 6 || new Date().getDay() == 0)">
     <h2>Latest likes</h2>
     <p class="mt-3" align="center">Current Page: {{ currentPage }}</p>
     <b-pagination

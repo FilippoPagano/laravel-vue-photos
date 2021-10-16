@@ -57330,7 +57330,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return !_vm.userName &&
     _vm.biggestFans &&
-    !(new Date().getDay() == 6 || new Date().getDay() == 0)
+    (new Date().getDay() == 6 || new Date().getDay() == 0)
     ? _c("div", [
         _c("h2", [_vm._v("Top followers")]),
         _vm._v(" "),
@@ -57373,7 +57373,7 @@ var render = function() {
   return _vm.photos &&
     !_vm.userName &&
     _vm.likes &&
-    (new Date().getDay() == 6 || new Date().getDay() == 0)
+    !(new Date().getDay() == 6 || new Date().getDay() == 0)
     ? _c(
         "div",
         [
