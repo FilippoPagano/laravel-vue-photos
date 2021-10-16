@@ -12416,6 +12416,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var that = this;
@@ -12474,6 +12475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -57330,9 +57332,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return !_vm.userName &&
     _vm.biggestFans &&
-    (new Date().getDay() == 6 || new Date().getDay() == 0)
+    !(new Date().getDay() == 6 || new Date().getDay() == 0)
     ? _c("div", [
         _c("h2", [_vm._v("Top followers")]),
+        _vm._v(" "),
+        _vm.biggestFans.length == 0
+          ? _c("p", [_vm._v("Nothing to show yet.")])
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "ul",
@@ -57373,11 +57379,15 @@ var render = function() {
   return _vm.photos &&
     !_vm.userName &&
     _vm.likes &&
-    !(new Date().getDay() == 6 || new Date().getDay() == 0)
+    (new Date().getDay() == 6 || new Date().getDay() == 0)
     ? _c(
         "div",
         [
           _c("h2", [_vm._v("Latest likes")]),
+          _vm._v(" "),
+          _vm.likes.length == 0
+            ? _c("p", [_vm._v("Nothing to show yet.")])
+            : _vm._e(),
           _vm._v(" "),
           _c("p", { staticClass: "mt-3", attrs: { align: "center" } }, [
             _vm._v("Current Page: " + _vm._s(_vm.currentPage))

@@ -1,6 +1,7 @@
 <template>
   <div v-if="!userName && biggestFans && (new Date().getDay() == 6 || new Date().getDay() == 0)">
     <h2>Top followers</h2>
+    <p v-if="biggestFans.length==0">Nothing to show yet.</p>
     <ul id="example-1">
       <li v-for="fan in biggestFans" :key="fan">
         {{ fan }}

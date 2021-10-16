@@ -1,6 +1,7 @@
 <template>
   <div v-if="photos && !userName && likes && !(new Date().getDay() == 6 || new Date().getDay() == 0)">
     <h2>Latest likes</h2>
+    <p v-if="likes.length==0">Nothing to show yet.</p>
     <p class="mt-3" align="center">Current Page: {{ currentPage }}</p>
     <b-pagination
       v-model="currentPage"
