@@ -12277,16 +12277,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var that = this;
-    this.$root.$on("changeUsername", function () {
-      that.userName = Vue.localStorage.get("userName");
+    this.$root.$on('changeUsername', function () {
+      that.userName = Vue.localStorage.get('userName');
     });
     this.$http.get("/api/likes").then(function (response) {
       that.likes = response.data;
     });
-    this.$http.get("http://jsonplaceholder.typicode.com/photos").then(function (response) {
+    this.$http.get('http://jsonplaceholder.typicode.com/photos').then(function (response) {
       that.photos = response.data;
     });
   },
@@ -12296,7 +12318,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       likes: [],
       currentPage: 1,
       itemsPerPage: 3,
-      userName: Vue.localStorage.get("userName")
+      userName: Vue.localStorage.get('userName')
     };
   },
   methods: {
@@ -57169,7 +57191,7 @@ var render = function() {
           _vm._v(" "),
           _c("b-pagination", {
             attrs: {
-              "total-rows": Math.ceil(_vm.photos.length / _vm.itemsPerPage),
+              "total-rows": _vm.photos.length,
               "per-page": _vm.itemsPerPage,
               "aria-controls": "photosCardGroup",
               align: "center"
@@ -57208,9 +57230,15 @@ var render = function() {
                       "b-card-text",
                       { staticStyle: { height: "-webkit-fill-available" } },
                       [
-                        _vm._v("\n        ID: " + _vm._s(photo.id) + " "),
+                        _vm._v(
+                          "\n                ID: " + _vm._s(photo.id) + " "
+                        ),
                         _c("br"),
-                        _vm._v("\n        " + _vm._s(photo.title) + "\n      ")
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(photo.title) +
+                            "\n            "
+                        )
                       ]
                     ),
                     _vm._v(" "),
@@ -57357,7 +57385,7 @@ var render = function() {
           _vm._v(" "),
           _c("b-pagination", {
             attrs: {
-              "total-rows": Math.ceil(_vm.likes.length / _vm.itemsPerPage),
+              "total-rows": _vm.likes.length,
               "per-page": _vm.itemsPerPage,
               "aria-controls": "latestLikes",
               align: "center"
